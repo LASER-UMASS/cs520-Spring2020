@@ -4,7 +4,7 @@ width and length.
 
 ### How to build and test (from Terminal):
 
-1. Make sure that you have Apache Ant installed. Run each ant command in the threeinarow folder, which contains the `build.xml` build file.
+1. Make sure that you have Apache Ant installed. Run each ant command in the rectangle folder, which contains the `build.xml` build file.
 
 2. Run `ant document` to generate the javadoc (a hypertext description) for all of the java classes. Generated hypertext description will be in the `jdoc` folder. Open the `index.html` file. 
 
