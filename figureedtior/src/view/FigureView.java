@@ -27,20 +27,23 @@ public class FigureView implements View
     public FigureView() {
 	super();
 
-	this.figurePanel = new JPanel(new FlowLayout());
+	this.figurePanel = new JPanel(new GridLayout(2,1));
 
-	JPanel imagePanel = new JPanel(new BorderLayout());
+	JPanel imagePanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 	this.imageView = new JLabel();
-	imagePanel.add(this.imageView, BorderLayout.WEST);
+	imagePanel.add(this.imageView);
 	this.changeImageButton = new JButton("Change image...");
-	imagePanel.add(this.changeImageButton, BorderLayout.EAST);
+	this.changeImageButton.setSize(125, 75);
+	imagePanel.add(this.changeImageButton);
 	this.figurePanel.add(imagePanel);
 
-	JPanel captionPanel = new JPanel(new BorderLayout());
+	JPanel captionPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 	this.captionView = new JLabel();
-	captionPanel.add(this.captionView, BorderLayout.WEST);	
+	this.captionView.setSize(500, 75);
+	captionPanel.add(this.captionView);	
 	this.editCaptionButton = new JButton("Edit caption...");
-	captionPanel.add(this.editCaptionButton, BorderLayout.EAST);
+	this.editCaptionButton.setSize(125, 75);
+	captionPanel.add(this.editCaptionButton);
 	this.figurePanel.add(captionPanel);
     }
 
@@ -66,8 +69,7 @@ public class FigureView implements View
 	if (model.getImage() != null) {
 	    this.imageView.setIcon(model.getImage());
 	}
-	if ((model.getCaption() != null) && 
-            (! model.getCaption().equals(""))) {
+	if (model.getCaption() != null) {
 	    this.captionView.setText(model.getCaption());
 	}
     }
