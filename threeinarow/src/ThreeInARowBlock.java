@@ -46,8 +46,8 @@ public class ThreeInARowBlock
      * @throws IllegalArgumentException When the given value is null
      */
     public void setContents(String value) {
-	if (contents == null) {
-	    throw new IllegalArgumentException("Contents must be non-null.");
+	if (value == null) {
+	    throw new IllegalArgumentException("The value must be non-null.");
 	}
 	this.contents = value;
     }
