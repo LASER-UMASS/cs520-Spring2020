@@ -3,34 +3,34 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import model.ThreeInARowBlock;
-import view.ThreeInARowGame;
+import model.RowBlockModel;
+import model.RowGameModel;
 
 
 /**
  * An example test class, which merely shows how to write JUnit tests.
  */
 public class TestExample {
-    private ThreeInARowGame game;
+    private RowGameModel gameModel;
 
     @Before
     public void setUp() {
-	game = new ThreeInARowGame();
+	gameModel = new RowGameModel();
     }
 
     @After
     public void tearDown() {
-	game = null;
+	gameModel = null;
     }
 
     @Test
     public void testNewGame() {
-        assertEquals ("1", game.player);
-        assertEquals (9, game.movesLeft);
+        assertEquals ("1", gameModel.player);
+        assertEquals (9, gameModel.movesLeft);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testNewBlockViolatesPrecondition() {
-	ThreeInARowBlock block = new ThreeInARowBlock(null);
+	RowBlockModel block = new RowBlockModel(null);
     }
 }

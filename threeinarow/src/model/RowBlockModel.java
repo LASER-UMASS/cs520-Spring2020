@@ -1,17 +1,15 @@
 package model;
 
-import view.ThreeInARowGame;
-
 
 /**
- * The ThreeInARowBlock class represents a given block in the game.
+ * The RowBlockModel class represents a given block in the game.
  */
-public class ThreeInARowBlock
+public class RowBlockModel
 {
     /**
      * The game that contains this block
      */
-    private ThreeInARowGame game;
+    private RowGameModel game;
 
     /**
      * The current value of the contents of this block
@@ -29,7 +27,7 @@ public class ThreeInARowBlock
      * @param game The game that will contain the new block
      * @throws IllegalArgumentException When the given game is null
      */
-    public ThreeInARowBlock(ThreeInARowGame game) {
+    public RowBlockModel(RowGameModel game) {
 	super();
 
 	if (game == null) {
@@ -40,7 +38,7 @@ public class ThreeInARowBlock
 	this.reset();
     }
 
-    public ThreeInARowGame getGame() {
+    public RowGameModel getGame() {
 	return this.game;
     }
 
