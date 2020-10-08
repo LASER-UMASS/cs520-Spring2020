@@ -3,6 +3,10 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import model.ThreeInARowBlock;
+import view.ThreeInARowGame;
+
+
 /**
  * An example test class, which merely shows how to write JUnit tests.
  */
