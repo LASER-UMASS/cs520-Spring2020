@@ -1,5 +1,5 @@
 # ThreeInARow
-ThreeInARowGame.java and ThreeInARowBlock.java are a basic Java implementation of the Three in a Row game.
+This is a basic Java implementation of the Three in a Row game.
 
 ### How to build and test (from Terminal):
 
