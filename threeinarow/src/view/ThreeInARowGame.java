@@ -1,9 +1,13 @@
+package view;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.*;
+
+import model.ThreeInARowBlock;
 
 /**
  * Java implementation of the 3 in a row game, using the Swing framework.
