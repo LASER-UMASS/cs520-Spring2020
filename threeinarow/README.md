@@ -13,8 +13,11 @@ This is a basic Java implementation of the Three in a Row game.
 
 ### How to run (from Terminal):
 
-1. After building the project (i.e., running `ant`), run the following command in the threeinarow folder:
+1. After building the project (i.e., running `ant`), run the following command in the threeinarow folder (without logging):
    `java -cp bin RowGameApp`
+
+2. Run the following command in the threeinarow folder (with logging):
+   `java -Dlogger.Logger.tracing=true -cp bin RowGameApp`
 
 ### How to clean up (from Terminal):
 

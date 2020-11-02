@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.*;
 
+import logger.Logger;
 import model.RowGameModel;
 import view.RowGameGUI;
 
@@ -53,6 +54,7 @@ public class RowGameController {
      * @param block The block to be moved to by the current player
      */
     public void move(JButton block) {
+	Logger.log("uses");
 	gameModel.movesLeft = gameModel.movesLeft - 1;
 
 	String player = gameModel.player;
@@ -403,6 +405,7 @@ public class RowGameController {
      * Resets the game to be able to start playing again.
      */
     public void resetGame() {
+	Logger.log("uses");
         for(int row = 0;row<3;row++) {
             for(int column = 0;column<3;column++) {
                 gameModel.blocksData[row][column].reset();
