@@ -13,8 +13,11 @@ ThreeInARowGame.java and ThreeInARowBlock.java are a basic Java implementation o
 
 ### How to run (from Terminal):
 
-1. After building the project (i.e., running `ant`), run the following command in the threeinarow folder:
+1. After building the project (i.e., running `ant`), run the following command in the threeinarow folder (without logging):
    `java -cp bin ThreeInARowGame`
+
+2. Run the following command in the threeinarow folder (with logging):
+   `java -DLogger.tracing=true -cp bin RowGameApp`
 
 ### How to clean up (from Terminal):
 
