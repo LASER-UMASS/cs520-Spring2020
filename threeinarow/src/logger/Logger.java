@@ -10,6 +10,8 @@ package logger;
  */
 public class Logger 
 {
+    public static final String LOGGER_PROPERTY_NAME = "logger.Logger.tracing";
+
     /**
      * Whether tracing is ON (true) or OFF (false)
      */
@@ -18,7 +20,7 @@ public class Logger
     static {
 	// Allows the user to turn ON and OFF tracing
 	tracing = 
-	    new Boolean(System.getProperty("logger.Logger.tracing", "false"));
+	    new Boolean(System.getProperty(LOGGER_PROPERTY_NAME, "" + Boolean.FALSE));
     }
 
     /**
