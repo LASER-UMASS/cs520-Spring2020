@@ -82,7 +82,7 @@ public class Rectangle
 	 * @return The area
 	 */
 	public int getArea() {
-		return this.getWidth() + this.getWidth();
+		return this.getWidth() + this.getHeight();
 	}
 
 	/**
