@@ -1,0 +1,67 @@
+1:ROR:<=(int,int):<(int,int):Rectangle@<init>(int,int):24:width <= 0 |==> width < 0
+2:ROR:<=(int,int):==(int,int):Rectangle@<init>(int,int):24:width <= 0 |==> width == 0
+3:ROR:<=(int,int):TRUE(int,int):Rectangle@<init>(int,int):24:width <= 0 |==> true
+4:ROR:<=(int,int):<(int,int):Rectangle@<init>(int,int):24:height <= 0 |==> height < 0
+5:ROR:<=(int,int):==(int,int):Rectangle@<init>(int,int):24:height <= 0 |==> height == 0
+6:ROR:<=(int,int):TRUE(int,int):Rectangle@<init>(int,int):24:height <= 0 |==> true
+7:COR:||(boolean,boolean):!=(boolean,boolean):Rectangle@<init>(int,int):24:(width <= 0) || (height <= 0) |==> (width <= 0) != (height <= 0)
+8:COR:||(boolean,boolean):LHS(boolean,boolean):Rectangle@<init>(int,int):24:(width <= 0) || (height <= 0) |==> (width <= 0)
+9:COR:||(boolean,boolean):RHS(boolean,boolean):Rectangle@<init>(int,int):24:(width <= 0) || (height <= 0) |==> (height <= 0)
+10:COR:||(boolean,boolean):TRUE(boolean,boolean):Rectangle@<init>(int,int):24:(width <= 0) || (height <= 0) |==> true
+11:STD:<ASSIGN>:<NO-OP>:Rectangle@<init>(int,int):28:this.width = width |==> <NO-OP>
+12:STD:<ASSIGN>:<NO-OP>:Rectangle@<init>(int,int):29:this.height = height |==> <NO-OP>
+13:ROR:<(int,int):!=(int,int):Rectangle@setWidth(int):44:width < 0 |==> width != 0
+14:ROR:<(int,int):<=(int,int):Rectangle@setWidth(int):44:width < 0 |==> width <= 0
+15:ROR:<(int,int):FALSE(int,int):Rectangle@setWidth(int):44:width < 0 |==> false
+16:STD:<ASSIGN>:<NO-OP>:Rectangle@setWidth(int):48:this.width = width |==> <NO-OP>
+17:ROR:<=(int,int):<(int,int):Rectangle@setHeight(int):63:height <= 0 |==> height < 0
+18:ROR:<=(int,int):==(int,int):Rectangle@setHeight(int):63:height <= 0 |==> height == 0
+19:ROR:<=(int,int):TRUE(int,int):Rectangle@setHeight(int):63:height <= 0 |==> true
+20:STD:<ASSIGN>:<NO-OP>:Rectangle@setHeight(int):67:this.height = height |==> <NO-OP>
+21:AOR:*(int,int):%(int,int):Rectangle@getPerimeter():76:2 * this.getWidth() |==> 2 % this.getWidth()
+22:AOR:*(int,int):+(int,int):Rectangle@getPerimeter():76:2 * this.getWidth() |==> 2 + this.getWidth()
+23:AOR:*(int,int):-(int,int):Rectangle@getPerimeter():76:2 * this.getWidth() |==> 2 - this.getWidth()
+24:AOR:*(int,int):/(int,int):Rectangle@getPerimeter():76:2 * this.getWidth() |==> 2 / this.getWidth()
+25:AOR:*(int,int):%(int,int):Rectangle@getPerimeter():76:2 * this.getHeight() |==> 2 % this.getHeight()
+26:AOR:*(int,int):+(int,int):Rectangle@getPerimeter():76:2 * this.getHeight() |==> 2 + this.getHeight()
+27:AOR:*(int,int):-(int,int):Rectangle@getPerimeter():76:2 * this.getHeight() |==> 2 - this.getHeight()
+28:AOR:*(int,int):/(int,int):Rectangle@getPerimeter():76:2 * this.getHeight() |==> 2 / this.getHeight()
+29:AOR:+(int,int):%(int,int):Rectangle@getPerimeter():76:2 * this.getWidth() + 2 * this.getHeight() |==> 2 * this.getWidth() % (2 * this.getHeight())
+30:AOR:+(int,int):*(int,int):Rectangle@getPerimeter():76:2 * this.getWidth() + 2 * this.getHeight() |==> 2 * this.getWidth() * (2 * this.getHeight())
+31:AOR:+(int,int):-(int,int):Rectangle@getPerimeter():76:2 * this.getWidth() + 2 * this.getHeight() |==> 2 * this.getWidth() - 2 * this.getHeight()
+32:AOR:+(int,int):/(int,int):Rectangle@getPerimeter():76:2 * this.getWidth() + 2 * this.getHeight() |==> 2 * this.getWidth() / (2 * this.getHeight())
+33:AOR:*(int,int):%(int,int):Rectangle@getArea():85:this.getWidth() * this.getWidth() |==> this.getWidth() % this.getWidth()
+34:AOR:*(int,int):+(int,int):Rectangle@getArea():85:this.getWidth() * this.getWidth() |==> this.getWidth() + this.getWidth()
+35:AOR:*(int,int):-(int,int):Rectangle@getArea():85:this.getWidth() * this.getWidth() |==> this.getWidth() - this.getWidth()
+36:AOR:*(int,int):/(int,int):Rectangle@getArea():85:this.getWidth() * this.getWidth() |==> this.getWidth() / this.getWidth()
+37:ROR:==(int,int):<=(int,int):Rectangle@isSquare():95:this.getWidth() == this.getHeight() |==> this.getWidth() <= this.getHeight()
+38:ROR:==(int,int):>=(int,int):Rectangle@isSquare():95:this.getWidth() == this.getHeight() |==> this.getWidth() >= this.getHeight()
+39:ROR:==(int,int):FALSE(int,int):Rectangle@isSquare():95:this.getWidth() == this.getHeight() |==> false
+40:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):Rectangle@equals(java.lang.Object):99:obj2 == null |==> false
+41:STD:<RETURN>:<NO-OP>:Rectangle@equals(java.lang.Object):100:return false; |==> <NO-OP>
+42:STD:<RETURN>:<NO-OP>:Rectangle@equals(java.lang.Object):104:return false; |==> <NO-OP>
+43:ROR:==(int,int):<=(int,int):Rectangle@equals(java.lang.Object):109:rec2.getWidth() == this.getWidth() |==> rec2.getWidth() <= this.getWidth()
+44:ROR:==(int,int):>=(int,int):Rectangle@equals(java.lang.Object):109:rec2.getWidth() == this.getWidth() |==> rec2.getWidth() >= this.getWidth()
+45:ROR:==(int,int):FALSE(int,int):Rectangle@equals(java.lang.Object):109:rec2.getWidth() == this.getWidth() |==> false
+46:ROR:==(int,int):<=(int,int):Rectangle@equals(java.lang.Object):110:rec2.getHeight() == this.getHeight() |==> rec2.getHeight() <= this.getHeight()
+47:ROR:==(int,int):>=(int,int):Rectangle@equals(java.lang.Object):110:rec2.getHeight() == this.getHeight() |==> rec2.getHeight() >= this.getHeight()
+48:ROR:==(int,int):FALSE(int,int):Rectangle@equals(java.lang.Object):110:rec2.getHeight() == this.getHeight() |==> false
+49:COR:&&(boolean,boolean):==(boolean,boolean):Rectangle@equals(java.lang.Object):109:(rec2.getWidth() == this.getWidth()) && (rec2.getHeight() == this.getHeight()) |==> (rec2.getWidth() == this.getWidth()) == (rec2.getHeight() == this.getHeight())
+50:COR:&&(boolean,boolean):FALSE(boolean,boolean):Rectangle@equals(java.lang.Object):109:(rec2.getWidth() == this.getWidth()) && (rec2.getHeight() == this.getHeight()) |==> false
+51:COR:&&(boolean,boolean):LHS(boolean,boolean):Rectangle@equals(java.lang.Object):109:(rec2.getWidth() == this.getWidth()) && (rec2.getHeight() == this.getHeight()) |==> (rec2.getWidth() == this.getWidth())
+52:COR:&&(boolean,boolean):RHS(boolean,boolean):Rectangle@equals(java.lang.Object):110:(rec2.getWidth() == this.getWidth()) && (rec2.getHeight() == this.getHeight()) |==> (rec2.getHeight() == this.getHeight())
+53:ROR:==(int,int):<=(int,int):Rectangle@equals(java.lang.Object):112:rec2.getWidth() == this.getHeight() |==> rec2.getWidth() <= this.getHeight()
+54:ROR:==(int,int):>=(int,int):Rectangle@equals(java.lang.Object):112:rec2.getWidth() == this.getHeight() |==> rec2.getWidth() >= this.getHeight()
+55:ROR:==(int,int):FALSE(int,int):Rectangle@equals(java.lang.Object):112:rec2.getWidth() == this.getHeight() |==> false
+56:ROR:==(int,int):<=(int,int):Rectangle@equals(java.lang.Object):113:rec2.getHeight() == this.getWidth() |==> rec2.getHeight() <= this.getWidth()
+57:ROR:==(int,int):>=(int,int):Rectangle@equals(java.lang.Object):113:rec2.getHeight() == this.getWidth() |==> rec2.getHeight() >= this.getWidth()
+58:ROR:==(int,int):FALSE(int,int):Rectangle@equals(java.lang.Object):113:rec2.getHeight() == this.getWidth() |==> false
+59:COR:&&(boolean,boolean):==(boolean,boolean):Rectangle@equals(java.lang.Object):112:(rec2.getWidth() == this.getHeight()) && (rec2.getHeight() == this.getWidth()) |==> (rec2.getWidth() == this.getHeight()) == (rec2.getHeight() == this.getWidth())
+60:COR:&&(boolean,boolean):FALSE(boolean,boolean):Rectangle@equals(java.lang.Object):112:(rec2.getWidth() == this.getHeight()) && (rec2.getHeight() == this.getWidth()) |==> false
+61:COR:&&(boolean,boolean):LHS(boolean,boolean):Rectangle@equals(java.lang.Object):112:(rec2.getWidth() == this.getHeight()) && (rec2.getHeight() == this.getWidth()) |==> (rec2.getWidth() == this.getHeight())
+62:COR:&&(boolean,boolean):RHS(boolean,boolean):Rectangle@equals(java.lang.Object):113:(rec2.getWidth() == this.getHeight()) && (rec2.getHeight() == this.getWidth()) |==> (rec2.getHeight() == this.getWidth())
+63:COR:||(boolean,boolean):!=(boolean,boolean):Rectangle@equals(java.lang.Object):109:((rec2.getWidth() == this.getWidth()) && (rec2.getHeight() == this.getHeight())) || ((rec2.getWidth() == this.getHeight()) && (rec2.getHeight() == this.getWidth())) |==> ((rec2.getWidth() == this.getWidth()) && (rec2.getHeight() == this.getHeight())) != ((rec2.getWidth() == this.getHeight()) && (rec2.getHeight() == this.getWidth()))
+64:COR:||(boolean,boolean):LHS(boolean,boolean):Rectangle@equals(java.lang.Object):109:((rec2.getWidth() == this.getWidth()) && (rec2.getHeight() == this.getHeight())) || ((rec2.getWidth() == this.getHeight()) && (rec2.getHeight() == this.getWidth())) |==> ((rec2.getWidth() == this.getWidth()) && (rec2.getHeight() == this.getHeight()))
+65:COR:||(boolean,boolean):RHS(boolean,boolean):Rectangle@equals(java.lang.Object):112:((rec2.getWidth() == this.getWidth()) && (rec2.getHeight() == this.getHeight())) || ((rec2.getWidth() == this.getHeight()) && (rec2.getHeight() == this.getWidth())) |==> ((rec2.getWidth() == this.getHeight()) && (rec2.getHeight() == this.getWidth()))
+66:COR:||(boolean,boolean):TRUE(boolean,boolean):Rectangle@equals(java.lang.Object):111:((rec2.getWidth() == this.getWidth()) && (rec2.getHeight() == this.getHeight())) || ((rec2.getWidth() == this.getHeight()) && (rec2.getHeight() == this.getWidth())) |==> true
+67:STD:<RETURN>:<NO-OP>:Rectangle@equals(java.lang.Object):115:return true; |==> <NO-OP>
