@@ -67,6 +67,15 @@ public class Rectangle
 		this.height = height;
 	}
 
+        /**
+	 * Gets the perimeter of this rectangle.
+	 *
+	 * @return the perimeter
+	 */
+        public int getPerimeter() {
+	        return 2 * this.getWidth() + 2 * this.getHeight();
+	}
+
 	/**
 	 * Gets the area of this rectangle.
 	 * 
@@ -97,12 +106,13 @@ public class Rectangle
 
 		Rectangle rec2 = (Rectangle)obj2;
 
-		if (rec2.getWidth() != this.getWidth()) {
-			return false;
-		}
-
-		if (rec2.getHeight() != this.getHeight()) {
-			return false;
+		if (((rec2.getWidth() == this.getWidth()) && 
+		     (rec2.getHeight() == this.getHeight()))
+		    ||
+		    ((rec2.getWidth() == this.getHeight()) &&
+		     (rec2.getHeight() == this.getWidth()))) 
+	        {
+			return true;
 		}
 
 		return true;
@@ -114,7 +124,7 @@ public class Rectangle
 
 	public String toString() {
 		String toReturn =
-				"Square(" +
+				"Rectangle(" +
 						"width=" + this.getWidth() +
 						", height=" + this.getHeight() +
 						")";
