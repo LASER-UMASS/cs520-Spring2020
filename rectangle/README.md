@@ -1,17 +1,48 @@
 # Rectangle
-Rectangle.java is a basic implementation of a rectangle represented by its 
-width and length.
+Example program for a software testing exercise that focuses on unit testing and
+test effectiveness, using code coverage and mutation analysis.
 
-### How to build and test (from Terminal):
+Testing
+-------
+Run `./test.sh` to compile and run all test cases.
 
-1. Make sure that you have Apache Ant installed. Run each ant command in the rectangle folder, which contains the `build.xml` build file.
+Coverage
+--------
+Run `./coverage.sh` to compute the coverage results.
+After completion, you can view the detailed html coverage report here:
+*coverage_results/index.html*
 
-2. Run `ant document` to generate the javadoc (a hypertext description) for all of the java classes. Generated hypertext description will be in the `jdoc` folder. Open the `index.html` file. 
+Mutation
+--------
+Run `./mutation.sh` to compute the mutation score.
+After completion, the following files in the *mutation_results* directory provide
+additional information about the generated, killed, and live mutants:
 
-3. Run `ant compile` to compile all of the java classes. Compiled classes will be in the `bin` folder.
+- *killed.csv*:  a summary of whether a mutant is still live or was killed with an
+                 exception/assertion/timeout.
 
-4. Run `ant test` to run all unit tests.
+- *summary.csv*: a one-line summary that indicates how many mutants were generated
+                 and killed, and how long the analysis took.
 
-### How to clean up (from Terminal):
+- *mutants.log*: a summary of the generated mutants (i.e., what part of the code was
+                 changed and how).
 
-1. Run `ant clean` to clean the project (i.e., delete all generated files).
+Rather than reading the mutants.log file, you can visualize the source code
+differences between a mutant and the original program by running:
+`./show_mutant.sh <mutant ID>`
+
+For example, the following command shows how mutant 1 differs from the original
+(i.e., unmutated) program:
+`./show_mutant.sh 1`
+
+The output is a unified diff that indicates what line the mutation changed:
+```
+--- src/Rectangle.java 2020-11-04 09:38:56.000000000 -0500
++++ .mutated/mutants/1/Rectangle.java		     2020-11-04 09:47:33.000000000 -0500
+@@ -24 +24 @@
+-      if ((width <= 0) || (height <= 0)) {
++      	  if ((width < 0) || (height <= 0)) {
+```
+The line starting with `@@` indicates the line number of the changed source code
+line (24 in this example). The line starting with `- ` shows the removed line,
+and the line starting with `+ ` shows the line that replaced it.
