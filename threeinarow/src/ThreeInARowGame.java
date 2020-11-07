@@ -464,26 +464,30 @@ public class ThreeInARowGame {
      * @param column The column that contains the block
      */
     protected void updateBlock(int row, int column) {
-	blocks[row][column].setText(blocksData[row][column].getContents());
-	blocks[row][column].setEnabled(blocksData[row][column].getIsLegalMove());
+		Logger.log("updates");
+
+		blocks[row][column].setText(blocksData[row][column].getContents());
+		blocks[row][column].setEnabled(blocksData[row][column].getIsLegalMove());
     }
 
     /**
      * Ends the game disallowing further player turns.
      */
     public void endGame() {
-	for(int row = 0;row<3;row++) {
-	    for(int column = 0;column<3;column++) {
-		blocks[row][column].setEnabled(false);
-	    }
-	}
+		Logger.log("manipulates");
+
+		for(int row = 0;row<3;row++) {
+	    	for(int column = 0;column<3;column++) {
+				blocks[row][column].setEnabled(false);
+	    	}
+		}
     }
 
     /**
      * Resets the game to be able to start playing again.
      */
     public void resetGame() {
-	Logger.log("uses");
+		Logger.log("uses");
 
         for(int row = 0;row<3;row++) {
             for(int column = 0;column<3;column++) {
