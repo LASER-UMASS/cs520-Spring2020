@@ -1,5 +1,6 @@
 package model;
 
+import logger.Logger;
 
 public class RowGameModel 
 {
@@ -31,6 +32,7 @@ public class RowGameModel
     }
 
     public void setFinalResult(String finalResult) {
+        Logger.log("manipulates");
 	this.finalResult = finalResult;
     }
 }

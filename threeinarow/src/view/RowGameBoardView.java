@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import logger.Logger;
 import controller.RowGameController;
 import model.RowGameModel;
 
@@ -65,6 +66,7 @@ public class RowGameBoardView implements RowGameView
      * @param column The column that contains the block
      */
     protected void updateBlock(RowGameModel gameModel, int row, int col) {
+        Logger.log("updates");
 	blocks[row][col].setText(gameModel.blocksData[row][col].getContents());
 	blocks[row][col].setEnabled(gameModel.blocksData[row][col].getIsLegalMove());	
     }

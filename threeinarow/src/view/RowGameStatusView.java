@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import logger.Logger;
 import controller.RowGameController;
 import model.RowGameModel;
 
@@ -24,6 +25,7 @@ public class RowGameStatusView implements RowGameView
     }
 
     public void update(RowGameModel gameModel) {
+		Logger.log("updates");
 	if (gameModel.getFinalResult() == null) {
 	    if (gameModel.player.equals("1")) {
 		playerturn.setText("Player 1 to play 'X'");

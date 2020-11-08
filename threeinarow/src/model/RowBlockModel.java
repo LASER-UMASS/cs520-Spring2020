@@ -1,5 +1,6 @@
 package model;
 
+import logger.Logger;
 
 /**
  * The RowBlockModel class represents a given block in the game.
@@ -49,6 +50,7 @@ public class RowBlockModel
      * @throws IllegalArgumentException When the given value is null
      */
     public void setContents(String value) {
+        Logger.log("manipulates");
 	if (value == null) {
 	    throw new IllegalArgumentException("The value must be non-null.");
 	}
@@ -65,6 +67,7 @@ public class RowBlockModel
     }
 
     public void setIsLegalMove(boolean isLegalMove) {
+        Logger.log("manipulates");
 	this.isLegalMove = isLegalMove;
     }
 
@@ -76,6 +79,7 @@ public class RowBlockModel
      * Resets this block before starting a new game.
      */
     public void reset() {
+        Logger.log("manipulates");
 	this.contents = "";
 	this.isLegalMove = false;
     }
