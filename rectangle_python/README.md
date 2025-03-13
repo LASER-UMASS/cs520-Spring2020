@@ -8,7 +8,7 @@ width and length.
 
 2. Use `python -m pydoc rectangle` to generate the pydoc for the Rectangle class.
 
-3. Use `python rectangle` to run the main method of the Rectangle class.
+3. Use `python rectangle_main.py` to run the main method of the Rectangle class.
 
 4. Use `python rectangle_tests.py` to run all unit tests in the RectangleTests class.
 
